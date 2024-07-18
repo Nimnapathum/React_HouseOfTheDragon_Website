@@ -1,0 +1,94 @@
+/* DoorOpenEffect.css */
+@import url('https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap');
+
+.door-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    background: linear-gradient(rgba(8, 0, 58, 0.7), rgba(8, 0, 58, 0.3)), url('./../../assets/bg.jpeg');
+    background-size: cover;
+}
+
+
+.door-left::before,
+.door-right::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.door-left,
+.door-right {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 50%;
+    background-size: cover;
+    transition: transform 0.9s ease;
+    z-index: 1;
+}
+
+.door-left {
+    left: 0;
+    background: linear-gradient(rgba(8, 0, 58, 0.7), rgba(8, 0, 58, 0.3)), url('./../../assets/leftdoor.jpeg');
+    background-size: cover;
+}
+
+.door-right {
+    right: 0;
+    background: linear-gradient(rgba(8, 0, 58, 0.7), rgba(8, 0, 58, 0.3)), url('./../../assets/rightdoor.jpeg');
+    background-size: cover;
+    /* Replace with your right door image */
+}
+
+.door-container.loaded .door-left {
+    transform: translateX(-100%);
+}
+
+.door-container.loaded .door-right {
+    transform: translateX(100%);
+}
+
+.content h2 {
+    background-color: rgba(0, 0, 0, 0.55);
+    position: static;
+    width: 300px;
+    border-radius: 30px;
+    color: azure;
+    padding: 8px;
+    font-size: 30px;
+    font-weight: 600;
+    font-family: MedievalSharp;
+}
+
+.content p {
+    margin-top: 20px;
+    font-size: 16px;
+    text-align: center;
+    color: azure;
+    font-family: MedievalSharp;
+}
+
+.content {
+    position: relative;
+    z-index: 0;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    max-width: 80%;
+    margin: auto;
+    transition: transform 0.5s ease;
+}
+
+.fadein {
+    transform: translateY(12%);
+    opacity: 1;
+}

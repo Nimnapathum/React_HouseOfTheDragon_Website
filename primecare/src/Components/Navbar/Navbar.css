@@ -1,0 +1,129 @@
+nav {
+    width: 100%;
+    color: white;
+    padding: 4px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 10;
+} 
+
+/* this is new tika */
+body.light {
+    --background-color: white;
+    --text-color: black;
+}
+
+body.dark {
+    --background-color: #191a1a;
+    --text-color: white;
+} 
+
+
+/**/
+
+
+.logo {
+    width: 60px;
+    height: 60px;
+}
+
+nav ul li {
+    display: inline-block;
+    align-items: center;
+    list-style: none;
+    margin: 5px 20px;
+    font-size: 16px;
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.dark-nav {
+    background: #191a1a;
+    transition: 0.5s;
+}
+
+.toggle-icon {
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+    background: white;
+    border-radius: 50%;
+    padding: 5px;
+}
+
+/* media query*/
+ @media (max-width: 1000px) {
+    .logo {
+        width: 50px;
+        height: 50px;
+    }
+
+    nav ul li {
+        margin: 10px 15px;
+    }
+}
+
+.menu-icon {
+    display: none;
+}
+
+@media (max-width: 800px) {
+    nav {
+        flex-direction: column;
+        padding: 15px 0;
+    }
+
+    nav ul {
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        background: #191a1a;
+        z-index: -1;
+        width: 200px;
+        padding-top: 70px;
+        transition: 0.5s;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 25px 40px;
+    }
+
+    .menu-icon {
+        display: block;
+        cursor: pointer;
+    }
+
+    .hide-mobile-menu {
+        right: -200px;
+    }
+
+    .dark-nav {
+        background: none;
+        transition: 0.5s;
+    }
+
+    .dark-menu-icon {
+        display: block;
+        cursor: pointer;
+        background: #191a1a;
+        padding: 10px;
+        border-radius: 50%;
+        padding-bottom: 5px;
+    }
+} 
+
+
+

@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Outfit", sans-serif;
+}
+
+body {
+  background: var(--background-color);
+  color: var(--text-color);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.container {
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--heading-color);
+}
+
+p {
+  color: var(--paragraph-color);
+}
+
+.btn {
+  background: var(--btn-background);
+  color: var(--btn-text-color);
+  padding: 14px 25px;
+  font-size: 16px;
+  border-radius: 30px;
+  cursor: pointer;
+  border: 0;
+  outline: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btnSetup {
+  width: 20px;
+  margin-left: 10px;
+  display: flex;
+}
+
+.btn.dark-btn {
+  background: var(--btn-dark-background);
+  color: var(--btn-dark-text-color);
+}
+
+.container.dark {
+  background: var(--container-background);
+}
+
+/* Light theme variables */
+body.light {
+  --background-color: #f5f5f5;
+  --text-color: #212121;
+  --heading-color: #000;
+  --paragraph-color: #333;
+  --btn-background: white;
+  --btn-text-color: #212121;
+  --btn-dark-background: #212e21;
+  --btn-dark-text-color: #fff;
+  --container-background: #fff;
+}
+
+/* Dark theme variables */
+body.dark {
+  --background-color: #333;
+  --text-color: #f5f5f5;
+  --heading-color: #f5f5f5;
+  --paragraph-color: #ccc;
+  --btn-background: #555;
+  --btn-text-color: #f5f5f5;
+  --btn-dark-background: #444;
+  --btn-dark-text-color: #fff;
+  --container-background: #444;
+}
+
+/* Media query */
+@media (max-width: 1200px) {
+  .container {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  .btn {
+    padding: 14px 22px;
+  }
+}

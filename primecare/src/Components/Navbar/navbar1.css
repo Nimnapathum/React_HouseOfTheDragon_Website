@@ -1,0 +1,141 @@
+/* Default styles for the navbar */
+nav {
+    width: 100%;
+    color: white;
+    padding: 4px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 10;
+    background: #191a1a; /* Default background color */
+}
+
+.logo {
+    width: 60px;
+    height: 60px;
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    align-items: center;
+    list-style: none;
+    margin: 5px 20px;
+    font-size: 16px;
+}
+
+.toggle-icon {
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+    background: white;
+    border-radius: 50%;
+    padding: 5px;
+}
+
+/* Dark mode styles */
+.dark-nav {
+    background: #191a1a; /* Dark theme background color */
+    transition: 0.5s;
+}
+
+.menu-icon {
+    display: none;
+}
+
+/* Media query for smaller mobile devices */
+@media (max-width: 800px) {
+    .menu-icon {
+        display: block;
+        cursor: pointer;
+        position: absolute; /* Position the menu icon */
+        top: 15px; /* Adjust top spacing as needed */
+        right: 15px; /* Adjust right spacing as needed */
+        z-index: 11; /* Ensure menu icon appears above nav content */
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        background: #191a1a;
+        z-index: 10;
+        width: 50%; /* Adjust width as needed */
+        padding-top: 60px;
+        transition: 0.5s;
+    }
+
+    nav ul.show-mobile-menu {
+        display: flex;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 25px 40px; /* Adjust margins as needed */
+    }
+
+    .hide-mobile-menu {
+        display: none;
+    }
+
+    .dark-nav {
+        background: none;
+        transition: 0.5s;
+    }
+
+    .dark-menu-icon {
+        display: block;
+        cursor: pointer;
+        background: #191a1a;
+        padding: 10px;
+        border-radius: 50%;
+        padding-bottom: 5px;
+    }
+}
+
+/* Additional adjustments for extra small devices */
+@media (max-width: 600px) {
+    .logo {
+        width: 40px;
+        height: 40px;
+        margin-left: 10px;
+    }
+
+    nav ul li {
+        margin: 20px 0;
+        font-size: 14px;
+    }
+
+    nav {
+        padding: 10px 0;
+        justify-content: flex-start;
+    }
+
+    .toggle-icon {
+        width: 20px;
+        height: 20px;
+    }
+
+    .menu-icon {
+        margin-left: 10px;
+    }
+}
+
+/* Ensure smooth transition for the menu on mobile */
+nav ul.show-mobile-menu {
+    right: 0;
+    z-index: 10;
+}
